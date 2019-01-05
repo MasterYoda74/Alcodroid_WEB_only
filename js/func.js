@@ -79,3 +79,9 @@ function SendRequest(r_method, r_path, r_args, r_handler)
         Request.send(null);
     }
 } 
+
+function test(test) {
+    alert(JSON.parse(test));
+}
+
+SendRequest("GET","config.json","",test);
