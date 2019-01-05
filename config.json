@@ -1,0 +1,14 @@
+{
+    "version":"v01",
+    "wifiSSID":"",
+    "wifiPASS":"",
+    "APSSID":"AlcoBot",
+    "APPASS":"12345678",
+    "isAP":true,
+    "servoMAX": 100,
+    "servoMIN": 7,
+    "stepPerMl": 50,
+    "feedback": 50,
+    "startMl": 50,
+    "ledbright": 60
+}
