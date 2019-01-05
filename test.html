@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <div class="container loader-bg">
+    <div style="background: black;" class="container loader-bg">
         <div class="row show" id="container_column">
             <h1 id="title" style="font-weight: bold;">AlcoDroid R2-D2</h1>
             <div id="state" style="margin-bottom: 10px;" onclick="this.style.zIndex=10" class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
@@ -26,11 +26,49 @@
                     <div id="dock-6" class="col-xs-4 col-sm-2 dock">6</div>
                 </div>
                 <div class="container-fluid">
-                    <div class="col-xs-6 col-sm-3 sname">Всего налито:</div>
-                    <div class="col-xs-6 col-sm-3 ">99999999 мл</div>
-                    <div class="col-xs-6 col-sm-3 sname">ahahaha 3</div>
-                    <div class="col-xs-6 col-sm-3 ">ahahaha 4</div>
-
+                    <div class="col-xs-12 col-sm-6 sitem">
+                        <div class="col-xs-6 sname">Всего налито:</div>
+                        <div class="col-xs-6 sval">99999999 мл</div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 sitem">
+                        <div class="col-xs-6 sname">Всего шотов:</div>
+                        <div class="col-xs-6 sval">99999999</div>
+                    </div>
+                </div>
+                <div class="container-fluid list-top">
+                    <div class="col-sm-6 col-xs-6">Имя</div>
+                    <div class="col-sm-3 col-xs-3">Шоты</div>
+                    <div class="col-sm-3 col-xs-3">Выпито</div>
+                </div>
+                <div class="container-fluid list">
+                    <div class="col-sm-6 col-xs-6">Вася</div>
+                    <div class="col-sm-3 col-xs-3">3</div>
+                    <div class="col-sm-3 col-xs-3">150</div>
+                </div>
+                <div class="container-fluid list">
+                    <div class="col-sm-6 col-xs-6">Вася</div>
+                    <div class="col-sm-3 col-xs-3">3</div>
+                    <div class="col-sm-3 col-xs-3">150</div>
+                </div>
+                <div class="container-fluid list">
+                    <div class="col-sm-6 col-xs-6">Вася</div>
+                    <div class="col-sm-3 col-xs-3">3</div>
+                    <div class="col-sm-3 col-xs-3">150</div>
+                </div>
+                <div class="container-fluid list">
+                    <div class="col-sm-6 col-xs-6">Вася</div>
+                    <div class="col-sm-3 col-xs-3">3</div>
+                    <div class="col-sm-3 col-xs-3">150</div>
+                </div>
+                <div class="container-fluid list">
+                    <div class="col-sm-6 col-xs-6">Вася</div>
+                    <div class="col-sm-3 col-xs-3">3</div>
+                    <div class="col-sm-3 col-xs-3">150</div>
+                </div>
+                <div class="container-fluid list">
+                    <div class="col-sm-6 col-xs-6">Вася</div>
+                    <div class="col-sm-3 col-xs-3">3</div>
+                    <div class="col-sm-3 col-xs-3">150</div>
                 </div>
             </div>
 
@@ -38,8 +76,55 @@
                 <h5 id="" class="alert-warning">Настройки</h5>
 
                 <!--<a id="" class="btn btn-block btn-danger" href="/">Главная</a>-->
-                <h2 id="" class="">Джедаи:</h2>
+                <h2 id="" class="">Джедаи</h2>
 
+                <div class="container-fluid no-gutters">
+                    <div class="id-num col-xs-12">ID: <span>12345678901234567890</span></div>
+                    <div class="col-xs-12 col-sm-4">
+                        <input undefined="" id="name" class="form-control input-class" pattern="[0-9a-zA-Zа-яА-Я.\- ]{1,20}" placeholder="Имя" value="Name">
+                    </div>
+                    <div class="col-xs-5 col-sm-3">
+                        <select class="form-control input-class" name="color">
+                    <option value="red">Красный</option>
+                    <option value="blue">Синий</option>
+                    <option value="white">Белый</option>
+                    <option value="orange">Оранжевый</option>
+                    <option value="green">Зеленый</option>
+                    <option value="lemon">Лимонный</option>
+                </select>
+                    </div>
+                    <div class="col-xs-5 col-sm-3">
+                        <input type="number" class="form-control input-class" id="doze" placeholder="Доза" min="5" max="50" step="5" value="50">
+                    </div>
+                    <div class="col-xs-2 col-sm-2">
+                        <div class="btn btn-block btn-danger btn-minus">-</div>
+                    </div>
+
+                </div>
+
+                <div class="container-fluid no-gutters">
+                    <div class="id-num col-xs-12">ID: <span>12345678901234567890</span></div>
+                    <div class="col-xs-12 col-sm-4">
+                        <input undefined="" id="name" class="form-control  input-class" pattern="[0-9a-zA-Zа-яА-Я.\- ]{1,20}" placeholder="Имя" value="Name">
+                    </div>
+                    <div class="col-xs-5 col-sm-3">
+                        <select class="form-control input-class" name="color">
+                    <option value="red">Красный</option>
+                    <option value="blue">Синий</option>
+                    <option value="white">Белый</option>
+                    <option value="orange">Оранжевый</option>
+                    <option value="green">Зеленый</option>
+                    <option value="lemon">Лимонный</option>
+                </select>
+                    </div>
+                    <div class="col-xs-5 col-sm-3">
+                        <input type="number" class="form-control input-class" id="doze" placeholder="Доза" min="5" max="50" step="5" value="50">
+                    </div>
+                    <div class="col-xs-2 col-sm-2">
+                        <div class="btn btn-block btn-danger btn-minus">-</div>
+                    </div>
+
+                </div>
                 <div class="container-fluid no-gutters">
                     <div class="id-num col-xs-12">ID: <span>12345678901234567890</span></div>
                     <div class="col-xs-12 col-sm-4">
@@ -64,59 +149,12 @@
 
                 </div>
 
-                <div class="container-fluid no-gutters">
-                    <div class="id-num col-xs-12">ID: <span>12345678901234567890</span></div>
-                    <div class="col-xs-12 col-sm-4">
-                        <input undefined="" id="name" class="form-control " pattern="[0-9a-zA-Zа-яА-Я.\- ]{1,20}" placeholder="Имя" value="Name">
-                    </div>
-                    <div class="col-xs-5 col-sm-3">
-                        <select class="form-control" name="color">
-                    <option value="red">Красный</option>
-                    <option value="blue">Синий</option>
-                    <option value="white">Белый</option>
-                    <option value="orange">Оранжевый</option>
-                    <option value="green">Зеленый</option>
-                    <option value="lemon">Лимонный</option>
-                </select>
-                    </div>
-                    <div class="col-xs-5 col-sm-3">
-                        <input type="number" class="form-control" id="doze" placeholder="Доза" min="5" max="50" step="5" value="50">
-                    </div>
-                    <div class="col-xs-2 col-sm-2">
-                        <div class="btn btn-block btn-danger btn-minus">-</div>
-                    </div>
 
-                </div>
-                <div class="container-fluid no-gutters">
-                    <div class="id-num col-xs-12">ID: <span>12345678901234567890</span></div>
-                    <div class="col-xs-12 col-sm-4">
-                        <input undefined="" id="name" class="form-control " pattern="[0-9a-zA-Zа-яА-Я.\- ]{1,20}" placeholder="Имя" value="Name">
-                    </div>
-                    <div class="col-xs-5 col-sm-3">
-                        <select class="form-control" name="color">
-                    <option value="red">Красный</option>
-                    <option value="blue">Синий</option>
-                    <option value="white">Белый</option>
-                    <option value="orange">Оранжевый</option>
-                    <option value="green">Зеленый</option>
-                    <option value="lemon">Лимонный</option>
-                </select>
-                    </div>
-                    <div class="col-xs-5 col-sm-3">
-                        <input type="number" class="form-control" id="doze" placeholder="Доза" min="5" max="50" step="5" value="50">
-                    </div>
-                    <div class="col-xs-2 col-sm-2">
-                        <div class="btn btn-block btn-danger btn-minus">-</div>
-                    </div>
-
-                </div>
-
-
-                <input id="" onclick="send_request(this, ''+renameGet('ssdp?ssdp=[[ssdp]]'),'')" class="btn btn-block btn-success" value="Сохранить" type="button">
+                <input id="" onclick="send_request(this, ''+renameGet('ssdp?ssdp=[[ssdp]]'),'')" class="btn btn-block btn-success btn-plus" value="Сохранить" type="button">
                 <hr id="" class="">
-                <h2 id="" class="">Тара:</h2>
-                <input undefined="" class="form-control " style="width: 40%;" pattern="[0-9a-zA-Zа-яА-Я.\- ]{1,20}" placeholder="ID" value="ID">
-                <select class="form-control" style="width: 30%;" name="color">
+                <h2 id="" class="">Тара</h2>
+                <input undefined="" class="form-control  input-class" style="width: 40%;" pattern="[0-9a-zA-Zа-яА-Я.\- ]{1,20}" placeholder="ID" value="ID">
+                <select class="form-control input-class" style="width: 30%;background-color: red;" name="color">
           <option value="red">Красный</option>
           <option value="blue">Синий</option>
           <option value="white">Белый</option>
@@ -125,11 +163,11 @@
           <option value="lemon">Лимонный</option>
         </select>
 
-                <div class="btn btn-block btn-success btn-minus" style="width: 25%;">+</div>
+                <div class="btn btn-block btn-success btn-plus" style="width: 25%;">+</div>
 
 
 
-                <input id="" onclick="send_request(this, ''+renameGet('ssid?ssid=[[ssid]]&amp;password=[[ssidPass]]'),'')" class="btn btn-block btn-" value="Сохранить" type="button">
+                <input id="" onclick="send_request(this, ''+renameGet('ssid?ssid=[[ssid]]&amp;password=[[ssidPass]]'),'')" class="btn btn-block btn-success btn-plus" value="Сохранить" type="button">
                 <hr id="" class="">
                 <h3>WiFi</h3>
                 <h4>Режим точки доступа:</h4>
@@ -218,13 +256,14 @@
                         </div>
                     </div>
                 </div>
-                <input id="" onclick="send_request(this, ''+renameGet('timeZone?timeZone=[[timeZone]]'),'')" class="btn btn-block btn-success" value="Сохранить" type="button">
+                <input id="" onclick="send_request(this, ''+renameGet('timeZone?timeZone=[[timeZone]]'),'')" class="btn btn-block btn-success btn-plus" value="Сохранить" type="button">
                 <hr id="" class="">
-                <a id="" class="btn btn-block btn-warning" href="javascript:if(confirm(renameBlock(jsonResponse,'Перезагрузить?'))){send_request(this,'/restart?device=ok');}">Перезагрузить устройство</a>
+                <a id="" class="btn btn-block btn-warning btn-minus" href="javascript:if(confirm(renameBlock(jsonResponse,'Перезагрузить?'))){send_request(this,'/restart?device=ok');}">Перезагрузить устройство</a>
             </div>
         </div>
 
     </div>
 </body>
+
 
 </html>
