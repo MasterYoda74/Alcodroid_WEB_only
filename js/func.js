@@ -1,3 +1,7 @@
+var jsonConfig;
+var jsonUsers;
+var jsonShots;
+
 function CreateRequest()
 {
     var Request = false;
@@ -51,7 +55,7 @@ function SendRequest(r_method, r_path, r_args, r_handler)
         if (Request.readyState == 4)
         {
             //Передаем управление обработчику пользователя
-            r_handler(Request);
+            r_handler(JSON.parse(Request.responseText));
         }
     }
     
@@ -80,9 +84,10 @@ function SendRequest(r_method, r_path, r_args, r_handler)
     }
 } 
 
-function parseconfig(jsonobj) {
+function parseconfig(configJ) {
     //alert(jsonobj.responseText);
-    var configJ = JSON.parse(jsonobj.responseText);
+    //var configJ = JSON.parse(jsonobj.responseText);
+    jsonConfig = configJ;
     if (configJ.isAP) {
         document.getElementById("isAP").setAttribute("checked","checked");
     } else {
@@ -99,14 +104,17 @@ function parseconfig(jsonobj) {
     document.getElementById("Feedback").value=configJ.feedback;
     document.getElementById("LED").value=configJ.ledbright;
 }
-function parseshots(jsonobj) {
+function parseshots(configJ) {
     //alert(jsonobj.responseText);
-    var configJ = JSON.parse(jsonobj.responseText);
+    //var configJ = JSON.parse(jsonobj.responseText);
+    jsonShots=configJ;
     //alert(configJ.shots.length);
     var parent=document.getElementById("shots");
+    parent.innerHTML="";
     for (i=0; i<configJ.shots.length; i++) {
         var newline=document.createElement('div');
         newline.className="container-fluid";
+        newline.id="shot"+configJ.shots[i].ID;
         var div1=document.createElement('div');
         div1.className="col-xs-6";
         var div2=document.createElement('div');
@@ -131,17 +139,20 @@ function parseshots(jsonobj) {
         newbutt.innerText="+";
         div3.appendChild(newbutt);
         newline.appendChild(div3);
-        parent.insertBefore(newline,document.getElementById("new-shot"));
+        parent.appendChild(newline);
     }
 }
-function parseusers(jsonobj) {
-    alert(jsonobj.responseText);
-    var configJ = JSON.parse(jsonobj.responseText);
-    alert(configJ.users.length);
+function parseusers(configJ) {
+    //alert(jsonobj.responseText);
+    //var configJ = JSON.parse(jsonobj.responseText);
+    jsonUsers=configJ;
+    //alert(configJ.users.length);
     var parent=document.getElementById("users");
+    parent.innerHTML="";
     for (i=0; i<configJ.users.length; i++) {
         var newline=document.createElement('div');
         newline.className="container-fluid no-gutters";
+        newline.id="user"+configJ.users[i].ID;
         var div1=document.createElement('div');
         div1.className="col-xs-12 id-num";
         div1.innerHTML="ID: <span>"+configJ.users[i].ID+"</span>";
@@ -174,6 +185,7 @@ function parseusers(jsonobj) {
         var newbutt=document.createElement('div');
         newbutt.className="btn btn-block btn-danger btn-minus";
         newbutt.innerText="-";
+        newbutt.onclick="userClick("+i+");"
         div5.appendChild(newbutt);
         newline.appendChild(div1);
         newline.appendChild(div2);
@@ -181,7 +193,41 @@ function parseusers(jsonobj) {
         newline.appendChild(div4);
         newline.appendChild(div5);
         parent.appendChild(newline);
+        
     }
+    fillstat(configJ);
+}
+function fillstat(j) {
+    var tml=0;
+    var tshots=0;
+    var parent=document.getElementById('status')
+    parent.innerHTML="";
+    for (i=0; i<j.users.length; i++) {
+        var newline=document.createElement('div');
+        newline.className="container-fluid list";
+        newline.id="stat"+j.users[i].ID;
+        var div1=document.createElement('div');
+        div1.className="col-sm-6 col-xs-6";
+        div1.innerText=j.users[i].name;
+        newline.appendChild(div1);
+        div1=document.createElement('div');
+        div1.className="col-sm-3 col-xs-3";
+        div1.innerText=j.users[i].totalshots;
+        newline.appendChild(div1);
+        div1=document.createElement('div');
+        div1.className="col-sm-3 col-xs-3";
+        div1.innerText=j.users[i].total;
+        newline.appendChild(div1);
+        parent.appendChild(newline);
+        tml=tml+j.users[i].total;
+        tshots=tshots+j.users[i].totalshots;
+    }
+    document.getElementById('tml').innerText  =tml+" ml";
+    document.getElementById("tshots").innerText=tshots;
+}
+
+function userClick(index) {
+    alert(index);
 }
 SendRequest("GET","config.json","",parseconfig);
 SendRequest("GET","shots.json","",parseshots);
