@@ -26,6 +26,7 @@ body {
 .btn {
     border-width: 2px;
     padding-bottom: 9px;
+    white-space: pre-line;
 }
 
 .btn-minus {

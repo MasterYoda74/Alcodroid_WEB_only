@@ -4,7 +4,7 @@
     "wifiPASS":"",
     "APSSID":"AlcoBot",
     "APPASS":"12345678",
-    "isAP":true,
+    "isAP":false,
     "servoMAX": 100,
     "servoMIN": 7,
     "stepPerMl": 50,

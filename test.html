@@ -78,32 +78,32 @@
 
                 <!--<a id="" class="btn btn-block btn-danger" href="/">Главная</a>-->
                 <h2 id="" class="">Джедаи</h2>
+                    <div class="container-fluid" id="users">
+                            <div class="container-fluid no-gutters">
+                                    <div class="id-num col-xs-12">ID: <span>12345678901234567890</span></div>
+                                    <div class="col-xs-12 col-sm-4">
+                                        <input undefined="" id="name" class="form-control input-class" pattern="[0-9a-zA-Zа-яА-Я.\- ]{1,20}" placeholder="Имя" value="Name">
+                                    </div>
+                                    <div class="col-xs-5 col-sm-3">
+                                        <select class="form-control input-class" name="color">
+                                    <option value="red">Красный</option>
+                                    <option value="blue">Синий</option>
+                                    <option value="white">Белый</option>
+                                    <option value="orange">Оранжевый</option>
+                                    <option value="green">Зеленый</option>
+                                    <option value="lemon">Лимонный</option>
+                                </select>
+                                    </div>
+                                    <div class="col-xs-5 col-sm-3">
+                                        <input type="number" class="form-control input-class" id="doze" placeholder="Доза" min="5" max="50" step="5" value="50">
+                                    </div>
+                                    <div class="col-xs-2 col-sm-2">
+                                        <div class="btn btn-block btn-danger btn-minus">-</div>
+                                    </div>
+                            </div>
+                    </div>
 
-                <div class="container-fluid no-gutters">
-                    <div class="id-num col-xs-12">ID: <span>12345678901234567890</span></div>
-                    <div class="col-xs-12 col-sm-4">
-                        <input undefined="" id="name" class="form-control input-class" pattern="[0-9a-zA-Zа-яА-Я.\- ]{1,20}" placeholder="Имя" value="Name">
-                    </div>
-                    <div class="col-xs-5 col-sm-3">
-                        <select class="form-control input-class" name="color">
-                    <option value="red">Красный</option>
-                    <option value="blue">Синий</option>
-                    <option value="white">Белый</option>
-                    <option value="orange">Оранжевый</option>
-                    <option value="green">Зеленый</option>
-                    <option value="lemon">Лимонный</option>
-                </select>
-                    </div>
-                    <div class="col-xs-5 col-sm-3">
-                        <input type="number" class="form-control input-class" id="doze" placeholder="Доза" min="5" max="50" step="5" value="50">
-                    </div>
-                    <div class="col-xs-2 col-sm-2">
-                        <div class="btn btn-block btn-danger btn-minus">-</div>
-                    </div>
-
-                </div>
-
-                <div class="container-fluid no-gutters">
+                <!--<div class="container-fluid no-gutters">
                     <div class="id-num col-xs-12">ID: <span>12345678901234567890</span></div>
                     <div class="col-xs-12 col-sm-4">
                         <input undefined="" id="name" class="form-control  input-class" pattern="[0-9a-zA-Zа-яА-Я.\- ]{1,20}" placeholder="Имя" value="Name">
@@ -148,37 +148,39 @@
                         <div class="btn btn-block btn-danger btn-minus">-</div>
                     </div>
 
-                </div>
+                </div>-->
 
 
                 <input id="" onclick="send_request(this, ''+renameGet('ssdp?ssdp=[[ssdp]]'),'')" class="btn btn-block btn-success btn-plus" value="Сохранить" type="button">
                 <hr id="" class="">
                 <h2 id="" class="">Тара</h2>
-                <input undefined="" class="form-control  input-class" style="width: 40%;" pattern="[0-9a-zA-Zа-яА-Я.\- ]{1,20}" placeholder="ID" value="ID">
-                <select class="form-control input-class" style="width: 30%;background-color: red;" name="color">
-          <option value="red">Красный</option>
-          <option value="blue">Синий</option>
-          <option value="white">Белый</option>
-          <option value="orange">Оранжевый</option>
-          <option value="green">Зеленый</option>
-          <option value="lemon">Лимонный</option>
-        </select>
-
-                <div class="btn btn-block btn-success btn-plus" style="width: 25%;">+</div>
-
-
-
+                <div class="container-fluid" id="shots">
+                    <input id="new-shot" class="form-control  input-class" style="width: 40%;" pattern="[0-9a-zA-Zа-яА-Я.\- ]{1,20}" placeholder="ID" value="">
+                    <input id="new-color" class="form-control  input-class" style="width: 25%;margin-bottom: -13px;" placeholder="Цвет">
+                    <div class="btn btn-block btn-success btn-plus" style="width: 30%;">Добавить шот</div>
+                </div>
                 <input id="" onclick="send_request(this, ''+renameGet('ssid?ssid=[[ssid]]&amp;password=[[ssidPass]]'),'')" class="btn btn-block btn-success btn-plus" value="Сохранить" type="button">
+                
+                
                 <hr id="" class="">
                 <h3>WiFi</h3>
-                <h4>Режим точки доступа:</h4>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h4>Режим точки доступа:</h4>
+                        </div>
+                        <div class="col-sm-6">
+                            <input type="checkbox" name="isAP" id="isAP">
+                        </div>
+                    </div>
+                </div>
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-6">
                             <h4>SSID точки доступа:</h4>
                         </div>
                         <div class="col-sm-6">
-                            <input undefined="" class="form-control " pattern="[0-9a-zA-Z-]{1,20}" placeholder="ID" value="#########">
+                            <input id="APSSID" undefined="" class="form-control " pattern="[0-9a-zA-Z-]{1,20}" placeholder="Не установлено" value="#########">
                         </div>
                     </div>
                     <div class="row">
@@ -186,7 +188,7 @@
                             <h4>Пароль точки доступа:</h4>
                         </div>
                         <div class="col-sm-6">
-                            <input undefined="" type="password" class="form-control " pattern="[0-9a-zA-Zа-яА-Я.\- ]{8,20}" placeholder="Pass" value="#########">
+                            <input id="APPASS" undefined="" class="form-control " pattern="[0-9a-zA-Zа-яА-Я.\- ]{8,20}" placeholder="Не установлено" value="#########">
                         </div>
                     </div>
                     <div class="row">
@@ -194,7 +196,7 @@
                             <h4>SSID роутера:</h4>
                         </div>
                         <div class="col-sm-6">
-                            <input undefined="" class="form-control " pattern="[0-9a-zA-Z- ]{1,20}" placeholder="Pass" value="#########">
+                            <input id="wifiSSID" undefined="" class="form-control " pattern="[0-9a-zA-Z- ]{1,20}" placeholder="Не установлено" value="#########">
                         </div>
                     </div>
                     <div class="row">
@@ -202,7 +204,7 @@
                             <h4>Пароль роутера:</h4>
                         </div>
                         <div class="col-sm-6">
-                            <input undefined="" type="password" class="form-control " pattern="[0-9a-zA-Zа-яА-Я.\- ]{8,20}" placeholder="Pass" value="#########">
+                            <input id="wifiPASS" undefined="" type="password" class="form-control " pattern="[0-9a-zA-Zа-яА-Я.\- ]{8,20}" placeholder="Не установлено" value="#########">
                         </div>
                     </div>
                 </div>
